@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Syne:wght@400;600;700;800&display=swap');
+
+:root {
+  --bg-base: #080c14;
+  --bg-panel: #0d1421;
+  --bg-card: #111927;
+  --bg-card-hover: #162030;
+  --border: #1e2d42;
+  --border-glow: #00c9ff44;
+  --cyan: #00c9ff;
+  --cyan-dim: #00c9ff88;
+  --cyan-soft: #00c9ff22;
+  --green: #00ffaa;
+  --green-dim: #00ffaa66;
+  --amber: #ffb347;
+  --amber-dim: #ffb34766;
+  --red: #ff4f6e;
+  --text-primary: #e2eaf4;
+  --text-secondary: #7a9bbf;
+  --text-muted: #3d5470;
+  --font-display: 'Syne', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --radius: 10px;
+  --shadow-glow: 0 0 24px #00c9ff18, 0 4px 32px #00000066;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg-base);
+  color: var(--text-primary);
+  font-family: var(--font-display);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 50% at 50% -10%, #00c9ff0d 0%, transparent 60%),
+    radial-gradient(ellipse 40% 40% at 90% 80%, #00ffaa06 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+#root { position: relative; z-index: 1; }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-panel); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--cyan-dim); }
+
+/* Animations */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 12px var(--cyan-dim); }
+  50% { box-shadow: 0 0 28px var(--cyan), 0 0 48px var(--cyan-dim); }
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+@keyframes nodeIn {
+  from { opacity: 0; transform: scale(0.88) translateY(12px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
