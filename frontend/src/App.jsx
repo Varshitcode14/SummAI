@@ -6,8 +6,10 @@ import SummarizerForm from './components/SummarizerForm.jsx'
 import SummaryOutput from './components/SummaryOutput.jsx'
 import FlowchartView from './components/FlowchartView.jsx'
 import RoadmapView from './components/RoadmapView.jsx'
+import { Routes, Route } from 'react-router-dom'
+import PrivacyPolicy from './components/PrivacyPolicy.jsx'
 
-export default function App() {
+function MainApp() {
   const [page, setPage] = useState('landing')
 
   if (page === 'landing') {
@@ -248,5 +250,13 @@ function ErrorBanner({ msg, onClose }) {
         background: 'none', border: 'none', color: 'var(--red)', cursor: 'pointer', fontSize: 18,
       }}>✕</button>
     </div>
+  )
+}
+export default function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<MainApp />} />
+      <Route path="/privacy" element={<PrivacyPolicy />} />
+    </Routes>
   )
 }

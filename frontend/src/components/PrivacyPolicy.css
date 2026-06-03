@@ -1,0 +1,40 @@
+.privacy-container {
+    min-height: 100vh;
+    background: #050816;
+    padding: 50px 20px;
+    color: white;
+  }
+  
+  .privacy-card {
+    max-width: 1000px;
+    margin: auto;
+    background: #0a1228;
+    border: 1px solid #00cfff;
+    border-radius: 16px;
+    padding: 40px;
+  }
+  
+  .privacy-card h1 {
+    color: #00cfff;
+    margin-bottom: 10px;
+  }
+  
+  .last-updated {
+    opacity: 0.8;
+    margin-bottom: 30px;
+  }
+  
+  .privacy-card h2 {
+    color: #00cfff;
+    margin-top: 30px;
+  }
+  
+  .privacy-card p,
+  .privacy-card li {
+    line-height: 1.8;
+    color: #d7e3ff;
+  }
+  
+  .privacy-card ul {
+    margin-left: 20px;
+  }
