@@ -17,7 +17,7 @@ def get_llm():
     if not api_key:
         raise ValueError("GROQ_API_KEY not found in environment variables")
     return ChatGroq(
-        model="llama-3.1-8b-instant",
+        model="llama-3.3-70b-versatile",
         temperature=0.3,
         groq_api_key=api_key,
         max_tokens=1024,        # cap output tokens — speeds up response
